@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Desk Stream</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="root" class="no-anim">
+  <div class="wallpaper"></div>
+  <div class="pane-dim"></div>
+  <div id="ghost"></div>
+  <div id="stage">
+    <div id="track">
+      <div id="cols"></div>
+      <div id="heads"></div>
+    </div>
+  </div>
+  <div id="drag-canvas"><div id="drag-layer"></div></div>
+
+  <div id="focus-layer">
+    <div class="f-stack"></div>
+    <div class="f-bar hud-bar glass">
+      <button class="hud-btn" data-f="overview" title="Back to the canvas"><svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M9.5 2.5h4v4M6.5 13.5h-4v-4M13.5 2.5L9 7M2.5 13.5L7 9" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <span class="hud-sep"></span>
+      <button class="hud-btn" data-f="desk-prev" title="Desk to the left"><svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3.5 5.5 8l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <span class="f-desk"></span>
+      <button class="hud-btn" data-f="desk-next" title="Desk to the right"><svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5 10.5 8 6 12.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <span class="hud-sep"></span>
+      <button class="hud-btn" data-f="up" title="Row above"><svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 10 8 5.5l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="hud-btn" data-f="down" title="Row below"><svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6 8 10.5 12.5 6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </div>
+
+  <div id="menu" class="glass"></div>
+</div>
+<script src="content.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

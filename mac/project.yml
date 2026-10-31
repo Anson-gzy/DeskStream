@@ -1,0 +1,81 @@
+name: DeskStream
+options:
+  bundleIdPrefix: com.guziyang
+  deploymentTarget:
+    macOS: "15.0"
+
+settings:
+  base:
+    MACOSX_DEPLOYMENT_TARGET: "15.0"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: 68VQ9CZA2A
+    CODE_SIGN_IDENTITY: "Apple Development"
+    CODE_SIGN_STYLE: Manual
+    ENABLE_HARDENED_RUNTIME: NO
+    ENABLE_APP_SANDBOX: NO
+
+targets:
+  DeskCore:
+    type: framework
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: DeskCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.guziyang.DeskCore
+        SKIP_INSTALL: YES
+        DEFINES_MODULE: YES
+        GENERATE_INFOPLIST_FILE: YES
+
+  DeskCoreTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: DeskCoreTests
+    dependencies:
+      - target: DeskCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.guziyang.DeskCoreTests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: ""
+        BUNDLE_LOADER: ""
+
+  DeskStream:
+    type: application
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: DeskStream
+      - path: ../web
+        type: folder
+        buildPhase: resources
+    dependencies:
+      - target: DeskCore
+        embed: true
+      - sdk: AppKit.framework
+      - sdk: WebKit.framework
+      - sdk: ScreenCaptureKit.framework
+      - sdk: ApplicationServices.framework
+      - sdk: Carbon.framework
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.guziyang.deskstream
+        INFOPLIST_FILE: DeskStream/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+
+schemes:
+  DeskStream:
+    build:
+      targets:
+        DeskStream: all
+        DeskCore: all
+        DeskCoreTests: [test]
+    test:
+      targets:
+        - DeskCoreTests
+    run:
+      config: Debug
