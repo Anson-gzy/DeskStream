@@ -25,7 +25,7 @@ Desk Stream never moves, resizes, hides or minimizes your windows. It only shows
 ## Install
 
 1. Download `DeskStream.zip` from [Releases](../../releases/latest), unzip it and move `DeskStream.app` to `/Applications`
-2. The app is signed with a development certificate but **not notarized**, so macOS blocks it the first time. Open it once, then go to System Settings → Privacy & Security and click **Open Anyway**
+2. The app is ad-hoc signed and **not notarized**, so macOS blocks it the first time. Open it once, then go to System Settings → Privacy & Security and click **Open Anyway**. If macOS says the app is damaged, run `xattr -dr com.apple.quarantine /Applications/DeskStream.app` and open it again
 3. Grant the two permissions it asks for in System Settings → Privacy & Security:
    - **Accessibility**: to list windows and bring them to the front
    - **Screen Recording**: to take window thumbnails and the wallpaper

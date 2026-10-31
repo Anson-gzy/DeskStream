@@ -25,7 +25,7 @@ Desk Stream 从不移动、缩放、隐藏或最小化你的窗口，它只负�
 ## 安装
 
 1. 从 [Releases](../../releases/latest) 下载 `DeskStream.zip`，解压后把 `DeskStream.app` 拖进 `/Applications`
-2. App 用开发证书签名，但**没有公证**，第一次打开会被 macOS 拦下。先打开一次，再到 System Settings → Privacy & Security 点 **Open Anyway**
+2. App 是 ad-hoc 签名，**没有公证**，第一次打开会被 macOS 拦下。先打开一次，再到 System Settings → Privacy & Security 点 **Open Anyway**。如果提示 App 已损坏，运行 `xattr -dr com.apple.quarantine /Applications/DeskStream.app` 后再打开
 3. 在 System Settings → Privacy & Security 里给它两个权限：
    - **Accessibility**：列出窗口、把窗口提到最前
    - **Screen Recording**：截窗口缩略图和壁纸

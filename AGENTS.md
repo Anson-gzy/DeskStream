@@ -31,6 +31,6 @@ cd mac && xcodegen generate --quiet && xcodebuild -project DeskStream.xcodeproj 
 ```
 
 - 签名用 Apple Development 证书（DEVELOPMENT_TEAM 是证书 OU 里的 68VQ9CZA2A，不是证书名括号里的 65XN27M632），ad-hoc 签名会让辅助功能和录屏权限每次重编都失效。
-- 发布：公开仓库 GitHub `Anson-gzy/DeskStream`，README 英文为主（`README.md`），中文 `README.zh-CN.md`，两份一起改。Release 附 `DeskStream.zip`（Release 配置、universal、未公证）。
+- 发布：公开仓库 GitHub `Anson-gzy/DeskStream`，README 英文为主（`README.md`），中文 `README.zh-CN.md`，两份一起改。Release 附 `DeskStream.zip`（Release 配置、universal、ad-hoc 重签、未公证：开发证书名里带个人邮箱，不能发出去）。
 - 首次运行要在 System Settings → Privacy & Security 里给 Accessibility 和 Screen Recording。
 - 安装：`ditto build/Build/Products/Debug/DeskStream.app /Applications/DeskStream.app`（在 `mac/` 下跑），同一证书签名，权限沿用。
