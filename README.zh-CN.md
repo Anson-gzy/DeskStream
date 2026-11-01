@@ -62,7 +62,7 @@ cd web && python3 -m http.server 4174 --bind 127.0.0.1
 
 ## 原理
 
-- `web/` 是画布，显示在一个全屏 `WKWebView` 面板里；Swift 和网页之间的协议见 `docs/bridge.md`
+- `web/` 是画布，显示在一个全屏 `WKWebView` 面板里，Swift 把窗口和壁纸推给网页，网页再回调 Swift
 - `mac/DeskStream` 是 App：用辅助功能 API 管窗口，ScreenCaptureKit 截缩略图，Carbon 注册全局快捷键，只听不拦的事件 tap 识别四指下滑
 - `mac/DeskCore` 是布局逻辑和它的单元测试
 - macOS 没有管理桌面的公开 API。Desk Stream 用 SkyLight 私有接口读取桌面，通过调度中心暴露给辅助功能的按钮新建、删除和调整桌面顺序，以后的 macOS 更新随时可能让其中某一项失效

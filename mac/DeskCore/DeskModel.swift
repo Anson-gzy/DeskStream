@@ -76,7 +76,7 @@ public struct Desk: Codable, Equatable {
         try container.encode(id, forKey: .id)
         try container.encode(name, forKey: .name)
         try container.encode(rows, forKey: .rows)
-        // Matches docs/bridge.md state.desks shape (id, name, rows)
+        // Matches the page's state.desks shape (id, name, rows)
     }
 }
 

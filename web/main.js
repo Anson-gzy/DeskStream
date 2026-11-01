@@ -1255,7 +1255,7 @@ addEventListener('resize', () => {
   renderCam(true);
 });
 
-/* ---------------- 与 Swift 的桥（docs/bridge.md） ---------------- */
+/* ---------------- 与 Swift 的桥 ---------------- */
 
 function load(st) {
   if (drag || deskDrag) { pending = st; return; }

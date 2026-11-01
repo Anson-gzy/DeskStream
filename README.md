@@ -62,7 +62,7 @@ Then open <http://127.0.0.1:4174>.
 
 ## How it works
 
-- `web/` is the canvas, shown in a full-screen `WKWebView` panel. `docs/bridge.md` is the protocol between Swift and the page
+- `web/` is the canvas, shown in a full-screen `WKWebView` panel. Swift pushes windows and the wallpaper to the page, and the page calls back into Swift
 - `mac/DeskStream` is the app: windows through the Accessibility API, thumbnails through ScreenCaptureKit, global hotkeys through Carbon, the four-finger swipe through a listen-only event tap
 - `mac/DeskCore` holds the layout logic and its unit tests
 - There is no public API for desktops. Desk Stream reads them with private SkyLight calls, and adds, removes and reorders them through the buttons Mission Control exposes to Accessibility. A future macOS update can break any of this
